@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    height: 100vh;
     display: flex;
 }
 
@@ -15,7 +16,7 @@ h1 {
     align-items: center;
 }
 
-.boxes > div {
+.boxes > #box-1, #box-2, #box-3, #box-4, #box-5 {
     background-color: yellow;
     border: 3px solid black;
     border-radius: 4px;
@@ -58,5 +59,23 @@ main {
 
 aside {
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-left: 3px solid black;
     width: 25%
+}
+
+h2 {
+    font-size: 35px;
+    margin-top: 25%;
+}
+
+.hex-locks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
 }
