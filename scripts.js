@@ -1,3 +1,6 @@
+var currentPalette 
+
+window.addEventListener("load", createPalette)
 
 
 function createHexCode() {
@@ -12,3 +15,8 @@ function createHexCode() {
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
 }
+
+function createPalette() {
+    currentPalette = new Palette([new Color(createHexCode()),new Color(createHexCode()),new Color(createHexCode()),new Color(createHexCode()),new Color(createHexCode())])
+}
+
