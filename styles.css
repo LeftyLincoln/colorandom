@@ -69,8 +69,10 @@ aside {
 }
 
 h2 {
+    width: 100%;
     font-size: 35px;
     margin-top: 25%;
+    text-align: center;
 }
 
 .hex-locks {
@@ -84,4 +86,24 @@ h2 {
 
 .hidden {
     display: none;
+}
+
+.saved-palettes {
+    width: 100%;
+}
+
+.palette-container {
+    margin-bottom: 5%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.palette-container > #mini-box-0, #mini-box-1, #mini-box-2, #mini-box-3, #mini-box-4 {
+    background-color: yellow;
+    border: 3px solid black;
+    border-radius: 4px;
+    height: 5vh;
+    width: 5vh;
 }
