@@ -56,5 +56,16 @@ function createNewPalette() {
 function savePalette() {
     savedPalettes.push(currentPalette)
     createPalette()
-    
+    savedPalettesSection.innerHTML = ''
+    for (var i = 0; i < savedPalettes.length; i++) {
+        savedPalettesSection.innerHTML += `
+            <div class="palette-container" id="container-${i}">
+                <div class="mini-palette" style="background-color:${savedPalettes[i].colors[0].hexCode}"></div>
+                <div class="mini-palette" style="background-color:${savedPalettes[i].colors[1].hexCode}"></div>
+                <div class="mini-palette" style="background-color:${savedPalettes[i].colors[2].hexCode}"></div>
+                <div class="mini-palette" style="background-color:${savedPalettes[i].colors[3].hexCode}"></div>
+                <div class="mini-palette" style="background-color:${savedPalettes[i].colors[4].hexCode}"></div>
+                <p class="trash">🗑</p>
+            </div>`
+    }
 }

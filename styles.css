@@ -100,7 +100,7 @@ h2 {
     align-items: center;
 }
 
-.palette-container > #mini-box-0, #mini-box-1, #mini-box-2, #mini-box-3, #mini-box-4 {
+.mini-palette {
     background-color: yellow;
     border: 3px solid black;
     border-radius: 4px;
