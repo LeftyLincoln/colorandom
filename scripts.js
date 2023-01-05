@@ -2,6 +2,7 @@ var randomColorsSection = document.querySelector('.random-colors')
 var newPaletteButton = document.querySelector('#new-palette-button')
 var savedPalettesSection = document.querySelector('.saved-palettes')
 var savePalettesButton = document.querySelector('#save-palette-button')
+var lockIcon = document.querySelector('.locks')
 
 var currentPalette
 var savedPalettes = []
@@ -9,6 +10,7 @@ var savedPalettes = []
 window.addEventListener("load", createPalette)
 newPaletteButton.addEventListener('click', createNewPalette)
 savePalettesButton.addEventListener('click', savePalette)
+randomColorsSection.addEventListener("click", lockColor)
 
 function createHexCode() {
     var hexCharacters = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -66,4 +68,10 @@ function savePalette() {
                 <p class="trash">🗑</p>
             </div>`
     }
+}
+
+function lockColor(event) {
+    var target = event.target.parentElement.id
+    document.getElementById(`unlocked-${target.slice(6)}`).classList.toggle("hidden")
+    document.getElementById(`locked-${target.slice(6)}`).classList.toggle("hidden")
 }

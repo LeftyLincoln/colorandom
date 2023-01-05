@@ -20,6 +20,7 @@ h1 {
 .box {
     background-color: yellow;
     border: 3px solid black;
+    cursor: pointer;
     border-radius: 4px;
     height: 20vh;
     width: 20vh;
@@ -108,9 +109,6 @@ h2 {
     width: 5vh;
 }
 
-.locks {
-    cursor: pointer;
-}
 
 .trash {
     cursor: pointer;
