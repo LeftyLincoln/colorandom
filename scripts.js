@@ -2,17 +2,16 @@ var randomColorsSection = document.querySelector('.random-colors')
 var newPaletteButton = document.querySelector('#new-palette-button')
 var savedPalettesSection = document.querySelector('.saved-palettes')
 var savePalettesButton = document.querySelector('#save-palette-button')
-var lockIcon = document.querySelector('.locks')
+
 var target
-
-
 var currentPalette
 var savedPalettes = []
 
 window.addEventListener("load", createPalette)
-newPaletteButton.addEventListener('click', function(){createNewPalette(target)})
+newPaletteButton.addEventListener('click', createNewPalette)
 savePalettesButton.addEventListener('click', savePalette)
 randomColorsSection.addEventListener("click", lockColor)
+savedPalettesSection.addEventListener('click', deletePalette)
 
 function createHexCode() {
     var hexCharacters = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -81,7 +80,7 @@ function savePalette() {
                 <div class="mini-palette" style="background-color:${savedPalettes[i].colors[2].hexCode}"></div>
                 <div class="mini-palette" style="background-color:${savedPalettes[i].colors[3].hexCode}"></div>
                 <div class="mini-palette" style="background-color:${savedPalettes[i].colors[4].hexCode}"></div>
-                <p class="trash">🗑</p>
+                <p class="trash" id='trash-${i}'>🗑</p>
             </div>`
     }
 }
@@ -95,4 +94,13 @@ function lockColor(event) {
     } else {
         currentPalette.colors[target].locked = false
     }
+}
+
+function deletePalette(event) {
+    target = event.target.parentElement 
+    if(event.target.className === 'trash') {
+        target.remove()
+        savedPalettes.splice(target.id.slice(5), 1)
+    } 
+
 }
