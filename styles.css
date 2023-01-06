@@ -1,8 +1,18 @@
+* {
+    font-family: 'Luckiest Guy', serif;
+    letter-spacing: 3px;
+    color: black;
+    text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 rgb(255, 255, 255), 0 1px 0 rgb(255, 255, 255), -1px 0 0 rgb(255, 255, 255);
+}
+
 body {
     margin: 0px;
     height: 100vh;
     display: flex;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-repeat: no-repeat;
+    background-image: url(http://clipart-library.com/images/Lcd575e6i.png);
+    background-position: left top;
+    background-color: white;
 }
 
 h1 {
@@ -19,9 +29,9 @@ h1 {
 
 .box {
     background-color: yellow;
-    border: 3px solid black;
+    border: 6px solid black;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 50px;
     height: 20vh;
     width: 20vh;
 }
@@ -49,14 +59,39 @@ main {
     justify-content: space-evenly;
 }
 
+@keyframes slidebg {
+  to {
+    background-position: 10vw;
+  }
+}
+
+.buttons > button:hover {
+    background-image: linear-gradient(
+        to right, 
+           #E7484F,
+           #F68B1D, 
+           #FCED00,
+           #009E4F,
+           #00AAC3,
+           #732982,
+           #00AAC3,
+           #009E4F,
+           #FCED00,
+           #F68B1D,
+           #E7484F
+        );
+    animation: slidebg 1s linear infinite;
+}
+
 .buttons > button {
     background-color: white;
     border: 3px solid black;
+    border-radius: 6px;
     height: 5vh;
     width: 12vw;
     border-width: 3px;
     box-shadow: 4px 4px 2px black;
-    font-size: large;
+    font-size: 20px;
     font-weight: bolder;
     cursor: pointer;
 }
@@ -81,21 +116,23 @@ h2 {
     flex-direction: row;
     align-items: center;
 }
-.label {
-    font-weight: bolder;
-}
 
 .hidden {
     display: none;
 }
 
 .saved-palettes {
-    width: 100%;
+    width: 90%;
 }
 
 .palette-container {
+    background-color: rgba(255, 255, 255, .75);
+    border: black 3px solid;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-bottom: 5%;
-    margin-left: 10%;
+    margin-left: 5%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -104,12 +141,15 @@ h2 {
 .mini-palette {
     background-color: yellow;
     border: 3px solid black;
-    border-radius: 4px;
+    border-radius: 15px;
     height: 5vh;
     width: 5vh;
 }
 
-
 .trash {
     cursor: pointer;
+}
+
+.label {
+    font-size: 20px;
 }
