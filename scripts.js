@@ -2,13 +2,17 @@ var randomColorsSection = document.querySelector('.random-colors')
 var newPaletteButton = document.querySelector('#new-palette-button')
 var savedPalettesSection = document.querySelector('.saved-palettes')
 var savePalettesButton = document.querySelector('#save-palette-button')
+var lockIcon = document.querySelector('.locks')
+var target
+
 
 var currentPalette
 var savedPalettes = []
 
 window.addEventListener("load", createPalette)
-newPaletteButton.addEventListener('click', createNewPalette)
+newPaletteButton.addEventListener('click', function(){createNewPalette(target)})
 savePalettesButton.addEventListener('click', savePalette)
+randomColorsSection.addEventListener("click", lockColor)
 
 function createHexCode() {
     var hexCharacters = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -31,7 +35,8 @@ function createPalette() {
 function generateColors() {
    randomColorsSection.innerHTML = ''
    for (var i = 0; i < 5; i++) {
-    randomColorsSection.innerHTML += 
+    if(!currentPalette.colors[i].locked){
+        randomColorsSection.innerHTML += 
         `<div class="swatches" id="swatch${[i]}">
             <div class="box" id="box-${[i]}"></div>
             <div class="hex-locks">
@@ -40,13 +45,26 @@ function generateColors() {
                 <p class="locks hidden" id="locked-${[i]}">🔒</p>
             </div>
         </div>`
+    } else {
+        randomColorsSection.innerHTML += 
+        `<div class="swatches" id="swatch${[i]}">
+            <div class="box" id="box-${[i]}"></div>
+            <div class="hex-locks">
+                <p class="label" id="label-${[i]}">${currentPalette.colors[i].hexCode}</p>
+                <p class="locks hidden" id="unlocked-${[i]}">🔓</p>
+                <p class="locks" id="locked-${[i]}">🔒</p>
+            </div>
+        </div>`
+    }
     document.getElementById(`box-${[i]}`).style.backgroundColor = `${currentPalette.colors[i].hexCode}`
    }
 }
 
 function createNewPalette() {
     for (var i = 0; i < 5; i++) {
-        currentPalette.colors[i].hexCode = createHexCode()
+        if(!currentPalette.colors[i].locked){
+            currentPalette.colors[i].hexCode = createHexCode()
+        }
     }
     generateColors()
 }
@@ -65,5 +83,16 @@ function savePalette() {
                 <div class="mini-palette" style="background-color:${savedPalettes[i].colors[4].hexCode}"></div>
                 <p class="trash">🗑</p>
             </div>`
+    }
+}
+
+function lockColor(event) {
+    target = event.target.parentElement.id.slice(6)
+    document.getElementById(`unlocked-${target}`).classList.toggle("hidden")
+    document.getElementById(`locked-${target}`).classList.toggle("hidden")
+    if(!currentPalette.colors[target].locked){
+        currentPalette.colors[target].locked = true
+    } else {
+        currentPalette.colors[target].locked = false
     }
 }
