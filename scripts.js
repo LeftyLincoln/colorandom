@@ -32,44 +32,28 @@ function createPalette() {
 }
 
 function generateColors() {
-   randomColorsSection.innerHTML = ''
-   for (var i = 0; i < 5; i++) {
-    if(!currentPalette.colors[i].locked){
+    randomColorsSection.innerHTML = ''
+    for (var i = 0; i < 5; i++) {
         randomColorsSection.innerHTML += 
-        `<div class="swatches" id="swatch${[i]}">
-            <div class="box" id="box-${[i]}"></div>
-            <div class="hex-locks">
-                <p class="label" id="label-${[i]}">${currentPalette.colors[i].hexCode}</p>
-                <p class="locks" id="unlocked-${[i]}">
-                    <span class="material-symbols-outlined">
-                    lock_open
-                    </span>
-                </p>
-                <p class="locks hidden" id="locked-${[i]}">
-                    <span class="material-symbols-outlined">
-                    lock
-                    </span>
-                </p>
-            </div>
-        </div>`
-    } else {
-        randomColorsSection.innerHTML += 
-        `<div class="swatches" id="swatch${[i]}">
-            <div class="box" id="box-${[i]}"></div>
-            <div class="hex-locks">
-                <p class="label" id="label-${[i]}">${currentPalette.colors[i].hexCode}</p>
-                <p class="locks hidden" id="unlocked-${[i]}">
-                    <span class="material-symbols-outlined">
-                    lock_open
-                    </span>
-                </p>
-                <p class="locks" id="locked-${[i]}">
-                    <span class="material-symbols-outlined">
-                    lock
-                    </span>
-                </p>
-            </div>
-        </div>`
+            `<div class="swatches" id="swatch${[i]}">
+                <div class="box" id="box-${[i]}"></div>
+                <div class="hex-locks">
+                    <p class="label" id="label-${[i]}">${currentPalette.colors[i].hexCode}</p>
+                    <p class="locks" id="unlocked-${[i]}">
+                        <span class="material-symbols-outlined">
+                        lock_open
+                        </span>
+                    </p>
+                    <p class="locks hidden" id="locked-${[i]}">
+                        <span class="material-symbols-outlined">
+                        lock
+                        </span>
+                    </p>
+                </div>
+            </div>`
+        if(currentPalette.colors[i].locked){
+        document.getElementById(`unlocked-${i}`).classList.add("hidden")
+        document.getElementById(`locked-${i}`).classList.remove("hidden")
     }
     document.getElementById(`box-${[i]}`).style.backgroundColor = `${currentPalette.colors[i].hexCode}`
    }
@@ -117,6 +101,5 @@ function deletePalette(event) {
     if(event.target.className === 'trash') {
         target.remove()
         savedPalettes.splice(target.id.slice(5), 1)
-    } 
-
+    }
 }
