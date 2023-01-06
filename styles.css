@@ -1,8 +1,13 @@
+* {
+    font-family: 'Luckiest Guy', serif;
+    letter-spacing: 3px;
+}
+
 body {
     margin: 0px;
     height: 100vh;
     display: flex;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(https://www.pngwing.com/en/free-png-balgd);
 }
 
 h1 {
@@ -81,9 +86,6 @@ h2 {
     flex-direction: row;
     align-items: center;
 }
-.label {
-    font-weight: bolder;
-}
 
 .hidden {
     display: none;
@@ -108,7 +110,6 @@ h2 {
     height: 5vh;
     width: 5vh;
 }
-
 
 .trash {
     cursor: pointer;

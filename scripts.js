@@ -40,8 +40,16 @@ function generateColors() {
             <div class="box" id="box-${[i]}"></div>
             <div class="hex-locks">
                 <p class="label" id="label-${[i]}">${currentPalette.colors[i].hexCode}</p>
-                <p class="locks" id="unlocked-${[i]}">🔓</p>
-                <p class="locks hidden" id="locked-${[i]}">🔒</p>
+                <p class="locks" id="unlocked-${[i]}">
+                    <span class="material-symbols-outlined">
+                    lock_open
+                    </span>
+                </p>
+                <p class="locks hidden" id="locked-${[i]}">
+                    <span class="material-symbols-outlined">
+                    lock
+                    </span>
+                </p>
             </div>
         </div>`
     } else {
@@ -50,8 +58,16 @@ function generateColors() {
             <div class="box" id="box-${[i]}"></div>
             <div class="hex-locks">
                 <p class="label" id="label-${[i]}">${currentPalette.colors[i].hexCode}</p>
-                <p class="locks hidden" id="unlocked-${[i]}">🔓</p>
-                <p class="locks" id="locked-${[i]}">🔒</p>
+                <p class="locks hidden" id="unlocked-${[i]}">
+                    <span class="material-symbols-outlined">
+                    lock_open
+                    </span>
+                </p>
+                <p class="locks" id="locked-${[i]}">
+                    <span class="material-symbols-outlined">
+                    lock
+                    </span>
+                </p>
             </div>
         </div>`
     }
