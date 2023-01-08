@@ -1,155 +1,155 @@
 * {
-    font-family: 'Luckiest Guy', serif;
-    letter-spacing: 3px;
-    color: black;
-    text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 rgb(255, 255, 255), 0 1px 0 rgb(255, 255, 255), -1px 0 0 rgb(255, 255, 255);
+  font-family: 'Luckiest Guy', serif;
+  letter-spacing: 3px;
+  color: black;
+  text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 rgb(255, 255, 255), 0 1px 0 rgb(255, 255, 255), -1px 0 0 rgb(255, 255, 255);
 }
 
 body {
-    margin: 0px;
-    height: 100vh;
-    display: flex;
-    background-repeat: no-repeat;
-    background-image: url(http://clipart-library.com/images/Lcd575e6i.png);
-    background-position: left top;
-    background-color: white;
+  margin: 0px;
+  height: 100vh;
+  display: flex;
+  background-repeat: no-repeat;
+  background-image: url(https://user-images.githubusercontent.com/107663888/211206323-99c6d742-d8f3-4fb0-a5ab-0202ce17ff40.png);
+  background-position: left top;
+  background-color: white;
 }
 
 h1 {
-    font-size: 100px;
-    margin: 0px;
+  font-size: 100px;
+  margin: 0px;
 }
 
 .swatches {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .box {
-    background-color: yellow;
-    border: 6px solid black;
-    cursor: pointer;
-    border-radius: 50px;
-    height: 20vh;
-    width: 20vh;
+  background-color: yellow;
+  border: 6px solid black;
+  cursor: pointer;
+  border-radius: 50px;
+  height: 20vh;
+  width: 20vh;
 }
 
 main {
-    height: 95vh;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  height: 95vh;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .random-colors {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .buttons {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @keyframes slidebg {
   to {
-    background-position: 10vw;
+  background-position: 10vw;
   }
 }
 
 .buttons > button:hover {
-    background-image: linear-gradient(
-        to right, 
-           #E7484F,
-           #F68B1D, 
-           #FCED00,
-           #009E4F,
-           #00AAC3,
-           #732982,
-           #00AAC3,
-           #009E4F,
-           #FCED00,
-           #F68B1D,
-           #E7484F
-        );
-    animation: slidebg 1s linear infinite;
+  background-image: linear-gradient(
+    to right, 
+       #E7484F,
+       #F68B1D, 
+       #FCED00,
+       #009E4F,
+       #00AAC3,
+       #732982,
+       #00AAC3,
+       #009E4F,
+       #FCED00,
+       #F68B1D,
+       #E7484F
+    );
+  animation: slidebg 1s linear infinite;
 }
 
 .buttons > button {
-    background-color: white;
-    border: 3px solid black;
-    border-radius: 6px;
-    height: 5vh;
-    width: 12vw;
-    border-width: 3px;
-    box-shadow: 4px 4px 2px black;
-    font-size: 20px;
-    font-weight: bolder;
-    cursor: pointer;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 6px;
+  height: 5vh;
+  width: 12vw;
+  border-width: 3px;
+  box-shadow: 4px 4px 2px black;
+  font-size: 125%;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 aside {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-left: 3px solid black;
-    width: 25%
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-left: 3px solid black;
+  width: 25%
 }
 
 h2 {
-    width: 100%;
-    font-size: 35px;
-    margin-top: 25%;
-    text-align: center;
+  width: 100%;
+  font-size: 35px;
+  margin-top: 25%;
+  text-align: center;
 }
 
 .hex-locks {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .saved-palettes {
-    width: 90%;
+  width: 90%;
 }
 
 .palette-container {
-    background-color: rgba(255, 255, 255, .75);
-    border: black 3px solid;
-    border-radius: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 5%;
-    margin-left: 5%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  background-color: rgba(255, 255, 255, .75);
+  border: black 3px solid;
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .mini-palette {
-    background-color: yellow;
-    border: 3px solid black;
-    border-radius: 15px;
-    height: 5vh;
-    width: 5vh;
+  background-color: yellow;
+  border: 3px solid black;
+  border-radius: 15px;
+  height: 5vh;
+  width: 5vh;
 }
 
 .trash {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .label {
-    font-size: 20px;
+  font-size: 20px;
 }
