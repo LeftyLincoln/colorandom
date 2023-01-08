@@ -9,9 +9,9 @@ We built a website that allows for a user to generate a random color palette. Wh
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 
-A user can fork and clone the following repository: https://github.com/Zertroz/colorandom 
-Type `cd colorandom` to move into the root directory
-Open the repository in your preferred text editor
+- A user can fork and clone the following repository: https://github.com/Zertroz/colorandom 
+- Type `cd colorandom` to move into the root directory
+- Open the repository in your preferred text editor
 
 
 ### Preview of App:
