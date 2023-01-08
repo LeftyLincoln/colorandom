@@ -17,7 +17,7 @@ Open the repository in your preferred text editor
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
-![Screenshot 2023-01-08 at 12 25 13 PM](https://user-images.githubusercontent.com/116752855/211210113-fcc6e473-a117-4876-9cc2-d2679deaa1c4.png)
+![211210113-fcc6e473-a117-4876-9cc2-d2679deaa1c4](https://user-images.githubusercontent.com/107663888/211210570-ff0360ad-d839-4091-b01f-d440d755c6cf.png)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
@@ -28,10 +28,10 @@ We were assigned this project on Monday January 2nd and had until Monday January
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
 
-https://github.com/LeftyLincoln
-https://github.com/jsahim
-https://github.com/Zertroz
-https://github.com/dustingouner
+- https://github.com/LeftyLincoln
+- https://github.com/jsahim
+- https://github.com/Zertroz
+- https://github.com/dustingouner
 
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
