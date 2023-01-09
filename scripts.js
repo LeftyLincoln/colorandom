@@ -1,7 +1,7 @@
 var randomColorsSection = document.querySelector('.random-colors')
-var newPaletteButton = document.querySelector('#new-palette-button')
+var newPaletteButton = document.querySelector('#newPaletteButton')
 var savedPalettesSection = document.querySelector('.saved-palettes')
-var savePalettesButton = document.querySelector('#save-palette-button')
+var savePalettesButton = document.querySelector('#savePaletteButton')
 
 var target
 var currentPalette
@@ -36,15 +36,15 @@ function generateColors() {
   for (var i = 0; i < 5; i++) {
     randomColorsSection.innerHTML += 
       `<div class="swatches" id="swatch${[i]}">
-        <div class="box" id="box-${[i]}"></div>
+        <div class="box" id="box${[i]}"></div>
         <div class="hex-locks">
-          <p class="label" id="label-${[i]}">${currentPalette.colors[i].hexCode}</p>
-          <p class="locks" id="unlocked-${[i]}">
+          <p class="label" id="label${[i]}">${currentPalette.colors[i].hexCode}</p>
+          <p class="locks" id="unlocked${[i]}">
             <span class="material-symbols-outlined">
             lock_open
             </span>
           </p>
-          <p class="locks hidden" id="locked-${[i]}">
+          <p class="locks hidden" id="locked${[i]}">
             <span class="material-symbols-outlined">
             lock
             </span>
@@ -52,10 +52,10 @@ function generateColors() {
         </div>
       </div>`
     if (currentPalette.colors[i].locked) {
-      document.getElementById(`unlocked-${i}`).classList.add('hidden')
-      document.getElementById(`locked-${i}`).classList.remove('hidden')
+      document.getElementById(`unlocked${i}`).classList.add('hidden')
+      document.getElementById(`locked${i}`).classList.remove('hidden')
     }
-    document.getElementById(`box-${[i]}`).style.backgroundColor = `${currentPalette.colors[i].hexCode}`
+    document.getElementById(`box${[i]}`).style.backgroundColor = `${currentPalette.colors[i].hexCode}`
   }
 }
 
@@ -74,21 +74,22 @@ function savePalette() {
   savedPalettesSection.innerHTML = ''
   for (var i = 0; i < savedPalettes.length; i++) {
     savedPalettesSection.innerHTML += `
-      <div class="palette-container" id="container-${i}">
+      <div class="palette-container" id="container${i}">
         <div class="mini-palette" style="background-color:${savedPalettes[i].colors[0].hexCode}"></div>
         <div class="mini-palette" style="background-color:${savedPalettes[i].colors[1].hexCode}"></div>
         <div class="mini-palette" style="background-color:${savedPalettes[i].colors[2].hexCode}"></div>
         <div class="mini-palette" style="background-color:${savedPalettes[i].colors[3].hexCode}"></div>
         <div class="mini-palette" style="background-color:${savedPalettes[i].colors[4].hexCode}"></div>
-        <p class="trash" id='trash-${i}'>🗑</p>
+        <p class="trash" id='trash${i}'>🗑</p>
       </div>`
   }
 }
 
 function lockColor(event) {
   target = event.target.parentElement.id.slice(6)
-  document.getElementById(`unlocked-${target}`).classList.toggle('hidden')
-  document.getElementById(`locked-${target}`).classList.toggle('hidden')
+  console.log(target);
+  document.getElementById(`unlocked${target}`).classList.toggle('hidden')
+  document.getElementById(`locked${target}`).classList.toggle('hidden')
   if (!currentPalette.colors[target].locked){
     currentPalette.colors[target].locked = true
   } else {
@@ -100,6 +101,6 @@ function deletePalette(event) {
   target = event.target.parentElement 
   if (event.target.className === 'trash') {
     target.remove()
-    savedPalettes.splice(target.id.slice(5), 1)
+    savedPalettes.splice(target.id.slice(4), 1)
   }
 }
